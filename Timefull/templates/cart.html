@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>My Cart</h1>
+
+
+{% if cart %}
+    <table>
+        <tr>
+            <td><b>Item</b></td>
+            <td><b>Quantity</b></td>
+            <td><b>Price</b></td>
+        </tr>
+        {% for item_id in cart %}
+            <tr>
+                <td>{{ names[item_id] }}</td>
+                <td>{{ cart[item_id] }}</td>
+                <td>{{ prices[item_id] }}</td>
+            
+                <td><a href="{{ url_for('remove_from_cart', item_id=item_id) }}">Remove</a></td>
+            </tr>
+        {% endfor %}
+            
+       </table>   
+        <p>Subtotal: {{ subtotal }}</p>
+        <p>VAT (13.5%): {{ vat }}</p>
+
+   
+    {% else %}
+        <p>Your Cart is Empty!</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('checkout') }}">Checkout</a></p>
+    <p><a href="{{ url_for('clocks') }}">Back to browsing</a></p>
+ 
+
+{% endblock %}

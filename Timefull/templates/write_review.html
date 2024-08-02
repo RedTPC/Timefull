@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>Write A Review</h1>
+
+<form action="" method="POST" novalidate>
+
+    {{ form.hidden_tag() }} 
+    {{ form.attribute.label }} 
+    {{ form.attribute() }}
+
+    <br>
+    <br>
+
+    {{ form.hidden_tag() }} 
+    {{ form.review_text.label }} 
+
+<br>
+
+    {{ form.review_text() }}
+
+    <br>
+    <br>
+    
+    {{ form.hidden_tag() }} 
+    {{ form.rating.label }} 
+    {{ form.rating() }}
+
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    {{ form.submit }} 
+
+    <br>
+    <br>
+
+    {{ validation_error_message }}
+
+    <br>
+    <br>
+
+ <a href="{{ url_for('reviews') }}">See All Reviews</a>
+
+    
+
+{% endblock %}

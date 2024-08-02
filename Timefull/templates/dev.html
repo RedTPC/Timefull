@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>About</h1>
+
+<form action="" method="POST" novalidate>
+
+    {{ form.hidden_tag() }} 
+    {{ form.attribute.label }} 
+    {{ form.attribute() }}
+
+    <br>
+    <br>
+
+    {{ form.contact_text.label }} 
+
+    <br>
+
+    {{ form.contact_text() }}
+
+
+    <br>
+    <br>
+
+    {{ form.submit }} 
+
+    {{ validation_error_message }}
+
+<h3>Admin Login:</h3>
+<p>Username: admin</p>
+<p>Password: admin</p>
+
+<h3>Test Data</h3>
+<h4>Fake Luhn Method Card Numbers (credit openai - https://chatgpt.com/)</h4>
+<p>5234892345678901</p>
+<p>6011512312345670</p>
+<p>4532015112830366</p>
+<p>6011511312345678</p>
+<p>374627364482920</p>
+<p>4234567812345678</p>
+<p>4716345112345678</p>
+<p>6011512312345678</p>
+<p>379344549051634</p>
+<p>6011512312345671</p>
+
+<h3>Feature list</h3>
+
+<h5>Completed</h5>
+
+<p>Individual Item Pages</p>
+<p>Name, Price, Image, Description, and user reviews for item displayed</p>
+
+<p>Login Option</p>
+<p>Register Option</p>
+
+<p>Cart</p>
+<p>Add to Cart</p>
+<p>Remove from Cart</p>
+<p>View Cart</p>
+<p>Price Displayed in Cart</p>
+<p>Cart subtotal summary</p>
+<p>VAT calculator (Ireland)</p>
+
+<p>Checkout Option</p>
+<p>Checkout page</p>
+<p>Name, Surname, Postcode, Email, Card Number, CCV, and Expiration Date entries</p>
+<p>Card Number verified to be plausible using Luhn algorithm</p>
+
+<p>Ability to log out</p>
+<p>Ability to write a review for a specific item and give a rating</p>
+<p>See all reviews page where item_id is displayed</p>
+
+<p>Admin Login (username: admin, password: admin)</p>
+<p>Admin Webpage with stock displayed</p>
+<p>Ability to edit prices of any item</p>
+<p>Slightly prettier CSS</p>
+<p>A search function</p>
+<p>Ability to edit stock</p>
+<p>Ability to edit prices</p>
+<p>List of users in admin tools</p>
+
+<p>More finality to payment page?</p>
+<p>Lots and lots and lots and lots of validators</p>
+
+<h5>To Do</h5>
+<p>
+
+- Images in the cart page
+
+- convert numbers on review page to star rating
+
+- Average Rating on item page?
+</p>
+
+
+{% endblock %}

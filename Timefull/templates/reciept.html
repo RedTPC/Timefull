@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>Payment Successful</h1>
+
+<p>Thanks for shopping with us {{ firstname }} {{ surname }}!</p>
+
+<p>Your package will be shipped at some point to {{ postcode }} </p>
+
+<p>Your Billing details below will be charged € {{ session["subtotal"] }}</p>
+
+<h4>Card Number {{ card_number }}</h4>
+<h4>Expiry Date {{ expiry_date }}</h4>
+<h4>CCV {{ CCV }}</h4>
+
+
+
+
+
+
+
+
+
+{% endblock %}

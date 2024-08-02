@@ -1,0 +1,180 @@
+html {
+
+    /* background-color: #C7F9CC80; */
+    border-radius: 2;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #C7F9CC;
+    color: #22577a;
+    /* margin-left: 5em;
+    margin-right: 5em; */
+    text-align: center;
+    border-radius: 2;
+
+    /* background-image: url("../images/background2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+}
+
+h1 {
+    /* text-align: center; */
+    /* border: 10px, solid, #80ed99;
+    border-radius: 2em; */
+    margin: 1em;
+    /* background-color: #80ed99; */
+}
+
+header h1 {
+
+    font-size: 4em;
+
+    border: 5px solid, #22577a80;
+    border-radius: 2em;
+    background-color: #22577a80;
+    
+    /* padding: 1em; */
+
+
+}
+
+#base_header a { 
+    /* position: relative; */
+
+    margin: 1em;
+    display: inline-block;
+    justify-content: center;
+
+}
+
+
+header {
+    background-color: #38A3A5;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 2em;
+    margin: 5em;
+
+}
+
+td {
+
+    padding: 1em;
+
+}
+
+a:hover {
+    background-color: aquamarine;
+    border-radius: 4px;
+}
+
+
+img {
+    display: block;
+    margin: auto;
+    width: 13em;
+    height: 13em;
+    border: 5px solid #22577a;
+    border-radius: 2em;
+}
+
+
+table {
+
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+a {
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 1em;
+    display: inline-block;
+    background-color: #57cc9990;
+    border-radius: 0.5em;
+}
+
+td {
+
+    font-size: 1em;
+
+}
+
+#homepage {
+
+    display: grid;
+    grid-template-columns: 3;
+    gap: 1em; 
+    padding: 1em;
+
+}
+
+#homepage img {
+
+    display: grid;
+}
+
+#central {
+
+    margin-left: 20em;
+    margin-right: 20em;
+    margin-top: -5em;
+    background-color: #80ed9980;
+    padding-top: 3em;
+}
+
+/* body h1 {
+
+
+
+} */
+
+li {
+
+    text-align: center;
+    margin-left: 23em;
+    margin-right: 23em;
+    padding-left: -50em;
+
+}
+
+/* ul {
+
+    padding-bottom: 5em;
+} */
+
+#border {
+/* 
+    border: 2px, solid, #22577a; */
+    border-collapse: collapse;
+    border-radius: 2em;
+}
+
+#border th {
+
+    border: 2px, solid, #22577a
+}
+
+#border td {
+
+    border: 2px, solid, #22577a
+}
+
+#border tr {
+
+    border: 2px, solid, #22577a
+}
+
+
+
+
+
+

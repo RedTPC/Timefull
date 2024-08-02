@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../static/styles/styles.css" />
+<title>Timeless</title>
+
+</head>
+
+<header id="base_header">
+
+    <h1>TimeFull</h1>
+    <a href="{{ url_for('clocks') }}">Home</a>
+
+    {% if not session.logged_in %}
+        <a href="{{ url_for('login') }}">Login</a>
+
+        <a href="{{ url_for('register') }}">Register</a>
+
+    {% else %}
+        <a href="{{ url_for('cart') }}">View My Cart</a>
+        <a href="{{ url_for('add_review') }}">Write a Review</a>
+
+            <a href="{{ url_for('profile_viewer') }}">My Profile</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+
+    {% if session.admin_clearance %}
+    <a href="{{ url_for('admin') }}">Admin Tools</a>
+
+{% endif %}
+
+    <!-- <a href="{{ url_for('add_review') }}">Write a Review</a>
+
+    <a href="{{ url_for('profile_viewer') }}">My Profile</a>
+
+    <a href="{{ url_for('logout') }}">Logout</a> -->
+
+    <a href="{{ url_for('dev') }}">About</a>
+
+
+</header>
+
+<body>
+
+<div id="central">
+{% block main_content %} 
+
+{% endblock %}
+</div>
+
+</body>
+</html>

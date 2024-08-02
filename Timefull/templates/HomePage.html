@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>Shop</h1>
+
+<h3>Search</h3>
+
+<form action="" method="POST" novalidate>
+
+    {{ form.hidden_tag() }} 
+    {{ form.attribute.label }} 
+    {{ form.attribute() }}
+
+    <br>
+    <br>
+    
+    {{ form.hidden_tag() }} 
+    {{ form.min_price.label }} 
+    {{ form.min_price() }}
+
+    <br>
+    <br>
+
+
+    {{ form.hidden_tag() }} 
+    {{ form.max_price.label }} 
+    {{ form.max_price() }}
+
+    <br>
+    <br>
+
+    {{ form.submit }} 
+
+    <br>
+    <br>
+
+    {{ validation_error_message }}
+
+{% if search_result %}
+
+<table id="homepage">
+
+    {% for clock in search_result %}
+
+    <tr>
+        <td>{{ clock["name"] }}</td>
+        <td><img src="../static/images/{{ clock['image'] }}"></td>
+        <td>€{{ clock["price"] }}</td>
+        <td><a href="{{ url_for('item', item_id = clock['item_id']) }}">View Item</a></td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% else %}
+
+<table id="homepage">
+
+    {% for clock in clocks %}
+
+    <tr>
+        <td>{{ clock["name"] }}</td>
+        <td><img src="../static/images/{{ clock['image'] }}"></td>
+        <td>€{{ clock["price"] }}</td>
+        <td><a href="{{ url_for('item', item_id = clock['item_id']) }}">View Item</a></td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endif %}
+
+
+
+{% endblock %}

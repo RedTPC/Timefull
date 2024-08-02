@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>Admin Tools</h1>
+
+<a href="{{ url_for('admin') }}">Edit Price</a><a href="{{ url_for('reports') }}">View Users and Reports</a>
+
+<h2>Stock Manager</h2>
+
+<h3>Current Portfolio</h3>
+
+<table id="border">
+    <tr>
+        <th>Item ID</th>
+        <th>Stock</th>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    
+        {% for product in products %}
+    <tr>    
+
+        <td>{{ product["item_id"] }}  </td><td>{{ product["stock"] }}</td><td>{{ product["name"] }}</td><td>€ {{ product["price"] }}</td> <td> <a href="{{ url_for('clocks', item_id=product['item_id']) }}">Item Page </a>  </td>
+
+    </tr>
+        {% endfor %}
+    
+</table>
+
+
+    <h2>Edit Stock</h2>
+
+    <form action="" method="POST" novalidate>
+
+        {{ form2.hidden_tag() }} 
+        {{ form2.attribute.label }} 
+        {{ form2.attribute() }}
+    
+        <br>
+        <br>
+
+        {{ form2.stock.label }} 
+        {{ form2.stock() }}
+    
+        <br>
+        <br>
+    
+        {{ form2.submit }} 
+    
+        <br>
+        <br>
+    
+        {{ validation_error_message }}
+
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>My Profile</h1>
+
+<p>It appears you are not <a href="{{ url_for('login') }}">logged in</a></p> if you don't have an account, you can <a href="{{ url_for('register') }}">register here.</a>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>Recent User Reviews</h1>
+
+{% if reviews %}
+
+    <table>
+
+    <tr><th>Item ID</th><th>User</th><th>Review</th><th>Rating</th></tr>
+    <br>
+        
+    {% for review in reviews %}
+        
+        <tr><td>{{ review["item_id"] }}</td><td> {{ review["username"] }}</td><td>{{ review["review_text"] }} </td><td><b>{{ review["rating"] }}</b> </td></tr>
+
+    {% endfor %}
+
+    </table>
+
+{% else %}
+        
+    <p>Could not find any reviews</p>
+    <p>Perhaps you could write one?</p>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>My Profile</h1>
+<p>Hello<b> {{ username }},</b> welcome to TimeFull! </p>
+
+<p><b><a href="{{ url_for('cart') }}">View my Cart</a></b></p>
+
+<a href="{{ url_for('logout') }}">Logout</a>
+
+
+
+
+{% endblock %}

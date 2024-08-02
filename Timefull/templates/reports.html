@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>Admin Tools</h1>
+
+<a href="{{ url_for('stock') }}">Edit Stock</a><a href="{{ url_for('admin') }}">Edit Price</a>
+
+<h2>Price Manager and User List</h2>
+
+<h3>All Users</h3>
+
+<ul>
+
+    {% for user in users %}
+        <li>{{ user["username"] }}</li>
+    {% endfor %}
+
+</ul>
+
+<h3>Reports</h3>
+
+<table>
+    <tr><th>User</th><th>Type</th><th>Issue</th></tr>
+    {% for report in reports %}
+    <tr><td>{{ report["user"] }}</td><td>{{ report["issue"] }}</td><td>{{ report["report_text"] }}</td></tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %} 

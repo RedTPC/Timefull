@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block main_content %} 
+
+<h1>Checkout</h1>
+
+<h2>Cart</h2>
+{% if cart %}
+    <table>
+        <tr>
+            <td><b>Item</b></td>
+            <td><b>Quantity</b></td>
+        </tr>
+        {% for item_id in cart %}
+            <tr>
+                <td>{{ names[item_id] }}</td>
+                <td>{{ cart[item_id] }}</td>
+                <td><a href="{{ url_for('remove_from_cart', item_id=item_id) }}">Remove</a></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    {% endif %}
+
+<!-- New Shtuff -->
+<h2>Payment</h2>
+
+<form action="" method="POST">
+
+    {{ form.hidden_tag() }} 
+    {{ form.firstname.label }} 
+    {{ form.firstname() }}
+
+    <br>
+    <ul>
+        {% for error in form.firstname.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    {{ form.surname.label }} 
+    {{ form.surname() }}
+
+    <br>
+    <ul>
+        {% for error in form.surname.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    {{ form.email.label }} 
+    {{ form.email() }}
+
+    <br>
+    <ul>
+        {% for error in form.email.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    {{ form.postcode.label }} 
+    {{ form.postcode() }}
+
+    <br>
+    <ul>
+        {% for error in form.postcode.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    {{ form.card_number.label }} 
+    {{ form.card_number() }}
+
+    <br>
+    <ul>
+        {% for error in form.card_number.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    {{ form.expiry_date.label }} 
+    {{ form.expiry_date() }}
+
+    <br>
+    <ul>
+        {% for error in form.expiry_date.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    {{ form.CCV.label }} 
+    {{ form.CCV() }}
+
+    <br>
+    <ul>
+        {% for error in form.CCV.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+
+
+
+
+
+
+    {{ form.submit }} 
+
+    <br>
+    <br>
+
+    {{ validation_error_message }}
+
+    <br>
+    <br>
+
+
+    <p><a href="{{ url_for('cart') }}">Back to Cart</a></p>
+    <p><a href="{{ url_for('clocks') }}">Back to browsing</a></p>
+ 
+
+{% endblock %}
